@@ -31,16 +31,16 @@ If you are building a paid MCP server from scratch, first install the official M
 
 TypeScript / Node:
 `npm install @modelcontextprotocol/sdk zod`
-Docs: `https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/server.md`
+Docs: [https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/server.md](https://github.com/modelcontextprotocol/typescript-sdk/blob/main/docs/server.md)
 
 Python:
 `pip install "mcp[cli]"` (or `uv add "mcp[cli]"`)
-Docs: `https://github.com/modelcontextprotocol/python-sdk`
+Docs: [https://github.com/modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
 
 ## Docs
 
-Official docs: `https://paymcp.info/docs`
-API reference (including custom providers): `https://paymcp.info/docs/api-reference`
+Official docs: [https://paymcp.info/docs](https://paymcp.info/docs)
+API reference (including custom providers): [https://paymcp.info/docs/api-reference](https://paymcp.info/docs/api-reference)
 
 ## Providers
 
@@ -56,12 +56,10 @@ When possible, use the official SDK rather than custom payment logic to stay com
 
 ## Examples
 
-- Node server demo: `https://github.com/PayMCP/node-paymcp-server-demo`
-- Python server demo: `https://github.com/PayMCP/python-paymcp-server-demo`
-- Subscription demo: `https://github.com/PayMCP/paymcp-subscription-demo`
+- Node server demo: [https://github.com/PayMCP/node-paymcp-server-demo](https://github.com/PayMCP/node-paymcp-server-demo)
+- Python server demo: [https://github.com/PayMCP/python-paymcp-server-demo](https://github.com/PayMCP/python-paymcp-server-demo)
+- Subscription demo: [https://github.com/PayMCP/paymcp-subscription-demo](https://github.com/PayMCP/paymcp-subscription-demo)
 
 ## Paper
 
-Pre-print: `https://zenodo.org/records/18158720`
-
-
+Pre-print: [https://zenodo.org/records/18158720](https://zenodo.org/records/18158720)
