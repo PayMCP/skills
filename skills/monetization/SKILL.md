@@ -21,6 +21,7 @@ You are an AI coding agent helping a developer add PayMCP monetization to an MCP
 Use this skill when the user asks to:
 - add pricing to MCP tools (pay-per-request),
 - gate tools behind subscriptions,
+- make an MCP server paid or monetized,
 - configure PayMCP providers (traditional or X402),
 - choose a coordination mode,
 - troubleshoot PayMCP integration issues.
@@ -62,6 +63,7 @@ Rules:
 
 If the developer insists on another mode, list the available options and warn that deviating from `AUTO` is not recommended unless they understand client capabilities:
 - AUTO, RESUBMIT, ELICITATION, TWO_STEP, X402, PROGRESS, DYNAMIC_TOOLS
+If the client setup is non-standard, read `references/coordination-modes.md` for compatibility details.
 
 ### Step 5 — Add pay-per-request pricing or subscription gating to tools
 Support both:
@@ -72,7 +74,9 @@ Rules:
 - Apply pricing only to the tool(s) the user wants to monetize.
 - Keep free tools free; do not blanket-charge everything.
 - Ensure the tool handler receives the required context/extra parameter as per the framework.
+- Pay-per-request does not require user identity; subscription gating does.
 - Subscriptions require stable user identity (auth). Without authentication, subscription checks are unreliable.
+  - Minimum auth checklist: stable user ID + verifiable token (e.g., JWT/session).
   - Auth guidance: https://modelcontextprotocol.io/docs/tutorials/security/authorization
 
 ### Step 6 — Test
@@ -103,6 +107,7 @@ installPayMCP(mcp, { providers: [new WalleotProvider({ apiKey: "sk_test_..." })]
    - `_meta: { price: { amount, currency } }`
 6. For subscriptions, add:
    - `_meta: { subscription: { plan: "..." } }`
+   - Requires auth; pay-per-request does not.
 
 ### Playbook B — Python FastMCP server
 1. Install dependencies:
@@ -119,6 +124,7 @@ PayMCP(mcp, providers=[WalleotProvider(apiKey="sk_test_...")])
 4. Optionally set `mode` (default is `AUTO` if omitted).
 5. Apply `@price(amount=..., currency="USD")` to monetized tools.
 6. For subscription gating, apply `@subscription(plan="...")`.
+   - Requires auth; pay-per-request does not.
 
 ### Playbook C — X402 (on-chain)
 Only do this when the user controls the MCP client or knows it supports x402-protocol.
