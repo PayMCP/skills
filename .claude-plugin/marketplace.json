@@ -1,0 +1,17 @@
+{
+  "name": "paymcp-skills",
+  "owner": {
+    "name": "PayMCP"
+  },
+  "plugins": [
+    {
+      "name": "paymcp",
+      "source": "./plugins/paymcp",
+      "description": "Agent skills for monetizing MCP tools with PayMCP (pricing, subscriptions, providers).",
+      "version": "0.1.0",
+      "author": {
+        "name": "PayMCP"
+      }
+    }
+  ]
+}
